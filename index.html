@@ -2,13 +2,16 @@
 <html ng-app="myFirstapp">
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <title>MY first AngularJs App </title>
 </head>
 <body>
-    <h1> Hello Coursera students </h1>
-    <div ng-app='myFirstController'> </div>
+    <h1> My first AngularJs App </h1>
+    <div ng-controller='myFirstController'>
+        {{sayHello()}}
+        <input type="text" ng-model="name">
+        Inside my Input is: {{name}}
+    </div>
 </body>
 </html>
