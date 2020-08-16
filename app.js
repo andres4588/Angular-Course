@@ -1,18 +1,20 @@
 (function () {
-    'use strict';
-    
-    angular.module('DIApp', [])
-    .controller('DIController', DIController);
+  'use strict';
+  
+  angular.module('MsgApp', [])
+  .controller('MsgController', MsgController);
+  
+  MsgController.$inject = ['$scope'];
+  function MsgController($scope) {
+    $scope.name = "Andres";
+    $scope.stateOfBeing ="hungry";
 
-    DIController.$inject= ['$scope', '$filter'];
-    
-    function DIController ($scope, $filter) {
-      $scope.name = "Yaakov";
-
-      $scope.upper = function() {
-          var upperCase = $filter('uppercase');
-          $scope.name= upperCase($scope.name)
-      };
-    }
-    
-    })();
+    $scope.sayMessage = function () {
+      return 'Andres le gusta comer en la noche carne'
+    };
+    $scope.feedYaakov= function () {
+      $scope.stateOfBeing ="fed";
+    };
+  }
+  
+  })();
